@@ -10,7 +10,7 @@ def get_currency():
     currency, is_created = Setting.objects.get_or_create(key="currency")
 
     if is_created:
-        currency.value = "€"
+        currency.value = "₹"
         currency.save()
 
     return currency.value

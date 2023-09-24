@@ -42,4 +42,6 @@ urlpatterns = [
          name='api_product'),
     path('api/pay/card/', apiviews.card_payment, name='api_card_payment'),
     path('api/pay/cash/', apiviews.cash_payment, name='api_cash_payment'),
+
+    path('total_sales/', views.total_sales, name='total_sales'),
 ]

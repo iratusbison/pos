@@ -287,3 +287,13 @@ def view_stock(request):
     }
 
     return render(request, 'pos/stock.html', context=context)
+
+
+def total_sales(request):
+    total_amount = Order.total_sales_amount()
+    
+    context = {
+        'total_sales_amount': total_amount
+    }
+    
+    return render(request, 'pos/total_sales.html', context=context)

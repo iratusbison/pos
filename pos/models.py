@@ -73,6 +73,10 @@ class Order(models.Model):
 
     def get_absolute_url(self):
         return reverse('view_order', args=[self.id])
+    
+    @classmethod
+    def total_sales_amount(cls):
+        return cls.objects.filter(done=True).aggregate(models.Sum('total_price'))['total_price__sum'] or 0
 
 
 class Cash(models.Model):
